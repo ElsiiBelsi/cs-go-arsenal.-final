@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS:GO ARSENAL PRO</title>
+    <link rel="icon" type="image/png" href="https://e7.pngegg.com/pngimages/926/268/png-clipart-counter-strike-global-offensive-counter-strike-source-counter-strike-1-6-logo-ak-47-cs-go-angle-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="finaljava.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">CS:GO <span>ARSENAL</span></div>
+        
+        <div class="header-right" id="navControls">
+            <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">☀️ LIGHT</button>
+            
+            <div id="userZone" style="display: inline-block;">
+                <button class="nav-btn" onclick="openReg()">JOIN NOW</button>
+            </div>
+            
+            <button class="nav-btn btn-cart" onclick="openCart()">
+                INVENTORY (<span id="cartCount">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <nav class="filter-bar">
+        <button class="btn-filter" onclick="render('All')">ALL</button>
+        <button class="btn-filter" onclick="render('Rifles')">RIFLES</button>
+        <button class="btn-filter" onclick="render('SMGs')">SMG</button>
+        <button class="btn-filter" onclick="render('Pistols')">PISTOLS</button>
+        <button class="btn-filter" onclick="render('Knives')">KNIVES</button>
+    </nav>
+
+    <main id="grid" class="weapon-grid"></main>
+
+    <div id="weaponModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeM()">&times;</span>
+            <div id="weaponDetail"></div>
+        </div>
+    </div>
+
+    <div id="regModal" class="modal">
+        <div class="modal-content reg-width">
+            <span class="close" onclick="closeM()">&times;</span>
+            <h2 class="modal-title">CREATE PROFILE</h2>
+            
+            <div class="form-group">
+                <input type="text" id="fName" placeholder="FIRST NAME">
+                <input type="text" id="lName" placeholder="LAST NAME">
+                <input type="email" id="uEmail" placeholder="EMAIL ADDRESS">
+                <button class="add-btn" onclick="saveUser()">JOIN ARSENAL</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeM()">&times;</span>
+            <h2 class="modal-title">YOUR INVENTORY</h2>
+            
+            <div id="cartItems" class="scroll-list"></div>
+            
+            <div id="totalPrice" class="total-style"></div>
+            
+            <button class="add-btn clear-btn" onclick="clearInv()">
+                CLEAR ALL
+            </button>
+        </div>
+    </div>
+
+    <script src="finaljava.js"></script>
+
+</body>
+</html>
